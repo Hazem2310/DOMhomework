@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+               body {
+                font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('images/back2.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    line-height: 1.6;
+        }
+        
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 2rem 0;
+        }
+
+        .highlight { background-color: rgb(212, 212, 12); }
+        .underline { text-decoration: underline; }
+        .bold { font-weight: bold; }
+        .hidden { display: none; }
+        .visible { display: block; }
+    </style>
+</head>
+<body>
+    <p id="text">This is a sample paragraph.</p>
+    <input type="text" id="classInput" placeholder="Enter class name">
+    <button onclick="addClass()">Add Class</button>
+
+    <script>
+        function addClass() {
+             className = document.getElementById('classInput').value;
+            document.getElementById('text').className = className;
+        }
+        function changeButtonText() {
+            button = document.getElementById('myButton');
+            button.textContent = "Clicked!";
+            button.classList.add('unclickable');
+        }
+        function toggleVisibility(elementId) {
+                element = document.getElementById(elementId);
+                if (element.classList.contains('visible')) {
+                    element.classList.remove('visible');
+                    element.classList.add('hidden');
+                } else {
+                    element.classList.remove('hidden');
+                    element.classList.add('visible');
+                }
+            }
+  
+    </script>
+    
+        <section>
+            <p id="para1" class="visible">This is paragraph 1.</p>
+            <p id="para2" class="visible">This is paragraph 2.</p>
+            <p id="para3" class="visible">This is paragraph 3.</p>
+            <button onclick="toggleVisibility('para1')">Toggle Paragraph 1</button>
+            <button onclick="toggleVisibility('para2')">Toggle Paragraph 2</button>
+            <button onclick="toggleVisibility('para3')">Toggle Paragraph 3</button>
+        </section>
+    
+   
+    <section>
+        <button id="myButton" onclick="changeButtonText()">Click me!</button>
+    </section>
+
+
+ 
+    
+</body>
+</html>
